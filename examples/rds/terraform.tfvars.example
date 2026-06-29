@@ -1,0 +1,15 @@
+aws_region              = "us-east-1"
+name                    = "rds-dev"
+engine                  = "postgres"
+engine_version          = "16.3"
+instance_class          = "db.t4g.micro"
+allocated_storage       = 20
+db_name                 = "appdb"
+username                = "appadmin"
+subnet_ids              = ["subnet-abc123", "subnet-def456"]
+vpc_security_group_ids  = ["sg-0123456789abcdef0"]
+
+tags = {
+  Environment = "dev"
+  Owner       = "platform"
+}
