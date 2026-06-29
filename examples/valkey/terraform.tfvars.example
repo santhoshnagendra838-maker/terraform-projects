@@ -1,0 +1,14 @@
+aws_region         = "us-east-1"
+name               = "valkey-dev"
+subnet_ids         = ["subnet-abc123", "subnet-def456"]
+security_group_ids = ["sg-0123456789abcdef0"]
+
+node_type               = "cache.t4g.small"
+engine_version          = "7.2"
+num_node_groups         = 1
+replicas_per_node_group = 1
+
+tags = {
+  Environment = "dev"
+  Owner       = "platform"
+}
