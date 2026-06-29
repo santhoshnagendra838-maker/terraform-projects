@@ -1,0 +1,23 @@
+aws_region              = "us-east-1"
+name                    = "platform-eks-dev"
+kubernetes_version      = "1.30"
+vpc_cidr                = "10.50.0.0/16"
+azs                     = ["us-east-1a", "us-east-1b", "us-east-1c"]
+public_subnet_cidrs     = ["10.50.0.0/20", "10.50.16.0/20", "10.50.32.0/20"]
+private_subnet_cidrs    = ["10.50.128.0/20", "10.50.144.0/20", "10.50.160.0/20"]
+single_nat_gateway      = false
+endpoint_public_access  = true
+endpoint_private_access = true
+
+node_group_name    = "default"
+node_instance_types = ["t3.medium"]
+node_desired_size  = 2
+node_min_size      = 1
+node_max_size      = 3
+node_disk_size     = 20
+
+tags = {
+  Project     = "terraform-projects"
+  Environment = "dev"
+  Owner       = "platform"
+}
